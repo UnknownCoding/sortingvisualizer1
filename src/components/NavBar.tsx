@@ -43,7 +43,7 @@ const NavBar = () => {
                         <button className={`algoButtons ${settings.algorithm === "bubble-sort" && "!bg-[#b2afae]"}`} onClick={(e:any)=>handleAlgo(e,"bubble-sort")}>Bubble Sort</button>
                         <button className={`algoButtons ${settings.algorithm === "insertion-Sort" && "!bg-[#b2afae]"}`} onClick={(e:any)=>handleAlgo(e,"insertion-Sort")}>Insertion Sort</button>
                         <button className={`algoButtons ${settings.algorithm === "merge-sort" && "!bg-[#b2afae]"}`} onClick={(e:any)=>handleAlgo(e,"merge-sort")}>Merge Sort</button>
-                        <button className='outline-none focus:ring-0 bg-[#F86F03] font-bold px-4 mx-5 lowercase py-1 rounded-md border-b-4 drop-shadow-lg border-[#a9510e]' onClick={()=>sort(settings.algorithm,items)} >Sort <BiSort className='iconsNav'/> </button>
+                        <button className='outline-none focus:ring-0 bg-[#F86F03] font-bold px-4 mx-5 lowercase py-1 rounded-md border-b-4 drop-shadow-lg border-[#a9510e]' onClick={()=>{ sort && sort(settings.algorithm,items)}} >Sort <BiSort className='iconsNav'/> </button>
                     </div>
                     <div>
                         <button className='uppercase text-gray-900 bg-gradient-to-r font-bold from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300  shadow-lg shadow-lime-500/50 rounded-lg text-sm px-5 py-2.5 text-center'> categories <BiSolidCategoryAlt className='iconsNav'/> </button>
@@ -53,11 +53,11 @@ const NavBar = () => {
                 <div className='flex flex-col space-y-5 items-center pb-3'>
                     <div className='labelDiv'>
                         <label htmlFor='arrayLen' className='labelInput'>Array Length :{settings.arrayLen}</label>
-                        <input type='range' name="arrayLen" defaultValue={10} min={10} max={50} value={settings.arrayLen} onChange={handleChanger}/>
+                        <input type='range' name="arrayLen" defaultValue={10} min={10} max={70} value={settings.arrayLen} onChange={handleChanger}/>
                     </div>
                     <div className='labelDiv'>
                         <label htmlFor='delay' className='labelInput'>Delay: {settings.delay}</label>
-                        <input type='range' name="delay" defaultValue={10} min={10} max={50} value={settings.delay} onChange={handleChanger} />
+                        <input type='range' name="delay" defaultValue={10} min={1} max={50} value={settings.delay} onChange={handleChanger} />
 
                     </div>
                     <div className='labelDiv'>
